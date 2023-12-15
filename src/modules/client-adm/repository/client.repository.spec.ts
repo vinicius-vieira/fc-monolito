@@ -28,7 +28,13 @@ describe("ClientRepository test", () => {
       id: new Id("1"),
       name: "Client 1",
       email: "dfd@d.com",
-      address: "aers",
+      document: "0000",
+      street: "some address",
+      number: "1",
+      complement: "",
+      city: "some city",
+      state: "some state",
+      zipCode: "000",
     };
 
     const client = new Client(clientProps);
@@ -43,7 +49,7 @@ describe("ClientRepository test", () => {
     expect(clientProps.id.id).toEqual(clientdb.id);
     expect(clientProps.name).toEqual(clientdb.name);
     expect(clientProps.email).toEqual(clientdb.email);
-    expect(clientProps.address).toEqual(clientdb.address);
+    expect(clientProps.street).toEqual(clientdb.street);
   });
 
   test("should find a client by id", async () => {
@@ -52,6 +58,13 @@ describe("ClientRepository test", () => {
       name: "Client 1",
       email: "dfd@d.com",
       address: "aers",
+      document: "0000",
+      street: "some address",
+      number: "1",
+      complement: "",
+      city: "some city",
+      state: "some state",
+      zipCode: "000",
       createdAt: new Date(),
       updatedAt: new Date(),
     };
@@ -63,7 +76,7 @@ describe("ClientRepository test", () => {
     expect(clientProps.id).toEqual(clientdb.id.id);
     expect(clientProps.name).toEqual(clientdb.name);
     expect(clientProps.email).toEqual(clientdb.email);
-    expect(clientProps.address).toEqual(clientdb.address);
+    expect(clientProps.street).toEqual(clientdb.street);
     expect(clientProps.createdAt.toLocaleString()).toStrictEqual(
       clientdb.createdAt.toLocaleString()
     );

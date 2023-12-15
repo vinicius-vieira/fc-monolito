@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize-typescript";
-import ProductModel from "../repository/product.model";
+import CatalogProductModel from "../repository/catalog-product.model";
 import StoreCatalogFacadeFactory from "../factory/store-catalog-facade-factory";
 import FindStoreCatalogFacadeInputDto from "./dto/store-catalog-facade.dto";
 
@@ -14,7 +14,7 @@ describe("StoreCatalogFacade test", () => {
       sync: { force: true },
     });
 
-    await sequelize.addModels([ProductModel]);
+    await sequelize.addModels([CatalogProductModel]);
     await sequelize.sync();
   });
 
@@ -31,7 +31,7 @@ describe("StoreCatalogFacade test", () => {
       salesPrice: 1.0,
     };
 
-    await ProductModel.create(product);
+    await CatalogProductModel.create(product);
 
     const result = await facade.find({
       id: product.id,
@@ -59,8 +59,8 @@ describe("StoreCatalogFacade test", () => {
       salesPrice: 1.0,
     };
 
-    await ProductModel.create(product);
-    await ProductModel.create(product2);
+    await CatalogProductModel.create(product);
+    await CatalogProductModel.create(product2);
 
     const result = await facade.findAll();
 

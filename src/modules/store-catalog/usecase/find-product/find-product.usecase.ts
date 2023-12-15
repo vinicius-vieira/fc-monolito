@@ -1,5 +1,5 @@
 import UseCaseInterface from "../../../@shared/usecase/usecase.interface";
-import ProductGateway from "../../gateway/product.gateway";
+import ProductGateway from "../../gateway/catalog-product.gateway";
 import FindProductInputDto from "./dto/find-product.dto";
 import FindProductOutputDto from "./dto/find-product.dto";
 

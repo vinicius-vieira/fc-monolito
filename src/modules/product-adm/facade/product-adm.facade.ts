@@ -1,6 +1,6 @@
 import UseCaseInterface from "../../@shared/usecase/usecase.interface";
 import AddProductAdmFacadeInputDto from "./dto/add-product-adm-facade.dto";
-import ProductAdmFacedeInterface from "./product-adm.facade.interface";
+import ProductAdmFacadeInterface from "./product-adm.facade.interface";
 import CheckStockFacadeInputDto from "./dto/add-product-adm-facade.dto";
 import { AddProductInputDto } from "../usecase/add-product/dto/add-product.dto";
 import CheckStockFacadeOutputDto from "./dto/add-product-adm-facade.dto";
@@ -11,7 +11,7 @@ export interface UseCasProps {
   stockUseCase: UseCaseInterface;
 }
 
-export default class ProductAdmFacede implements ProductAdmFacedeInterface {
+export default class ProductAdmFacede implements ProductAdmFacadeInterface {
   private _addProductUsecase: UseCaseInterface;
   private _checkStockProductUsecase: UseCaseInterface;
 

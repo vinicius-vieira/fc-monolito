@@ -27,7 +27,13 @@ describe("ClientAdmFacade test", () => {
     const input = {
       name: "Client 1",
       email: "dfd@d.com",
-      address: "aers",
+      document: "0000",
+      street: "some address",
+      number: "1",
+      complement: "",
+      city: "some city",
+      state: "some state",
+      zipCode: "000",
     } as AddClientAdmFacedeInputDto;
 
     const clientAdmFacade = ClientAdmFacedeFactory.create();
@@ -41,14 +47,20 @@ describe("ClientAdmFacade test", () => {
     expect(clientdb).toBeDefined();
     expect(input.name).toEqual(clientdb.name);
     expect(input.email).toEqual(clientdb.email);
-    expect(input.address).toEqual(clientdb.address);
+    expect(input.street).toEqual(clientdb.street);
   });
 
   test("should find a client", async () => {
     const input = {
       name: "Client 1",
       email: "dfd@d.com",
-      address: "aers",
+      document: "0000",
+      street: "some address",
+      number: "1",
+      complement: "",
+      city: "some city",
+      state: "some state",
+      zipCode: "000",
     } as AddClientAdmFacedeInputDto;
 
     const clientAdmFacade = ClientAdmFacedeFactory.create();
@@ -63,6 +75,6 @@ describe("ClientAdmFacade test", () => {
     expect(result.id).toEqual(client.id);
     expect(result.name).toEqual(client.name);
     expect(result.email).toEqual(client.email);
-    expect(result.address).toEqual(client.address);
+    expect(result.street).toEqual(client.street);
   });
 });

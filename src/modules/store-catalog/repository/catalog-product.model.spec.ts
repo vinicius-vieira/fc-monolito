@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize-typescript";
-import ProductRepository from "./product.repository";
+import CatalogProductRepository from "./catalog-product.repository";
 import Id from "../../@shared/domain/value-object/id.value-object";
-import ProductModel from "./product.model";
+import CatalogProductModel from "./catalog-product.model";
 
 describe("ProductRepository test", () => {
   let sequelize: Sequelize;
@@ -14,7 +14,7 @@ describe("ProductRepository test", () => {
       sync: { force: true },
     });
 
-    await sequelize.addModels([ProductModel]);
+    await sequelize.addModels([CatalogProductModel]);
     await sequelize.sync();
   });
 
@@ -37,11 +37,11 @@ describe("ProductRepository test", () => {
       salesPrice: 2.0,
     };
 
-    await ProductModel.create(productProps1);
+    await CatalogProductModel.create(productProps1);
 
-    await ProductModel.create(productProps2);
+    await CatalogProductModel.create(productProps2);
 
-    const productRepository = new ProductRepository();
+    const productRepository = new CatalogProductRepository();
 
     const products = await productRepository.findAll();
 
@@ -72,11 +72,11 @@ describe("ProductRepository test", () => {
       salesPrice: 2.0,
     };
 
-    await ProductModel.create(productProps1);
+    await CatalogProductModel.create(productProps1);
 
-    await ProductModel.create(productProps2);
+    await CatalogProductModel.create(productProps2);
 
-    const productRepository = new ProductRepository();
+    const productRepository = new CatalogProductRepository();
 
     const product = await productRepository.find(productProps1.id);
 

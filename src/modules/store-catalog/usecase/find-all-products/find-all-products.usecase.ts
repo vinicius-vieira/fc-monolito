@@ -1,5 +1,5 @@
 import UseCaseInterface from "../../../@shared/usecase/usecase.interface";
-import ProductGateway from "../../gateway/product.gateway";
+import ProductGateway from "../../gateway/catalog-product.gateway";
 import FindAllProductsDto from "./dto/findl-all-products.dto";
 
 export default class FindAllProductsUseCase implements UseCaseInterface {
